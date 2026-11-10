@@ -19,6 +19,10 @@ curl -fsSL https://tinkershell.io/install-tui.sh | bash
 curl -fsSL https://tinkershell.io/install-gateway.sh | bash
 ```
 
+Default installs live under `~/.local` and need no sudo. Linux uses user systemd
+services; macOS uses LaunchAgents. Existing user service settings are preserved.
+Use `--system-package` explicitly if you prefer Debian/Ubuntu packages.
+
 The [installation guide](https://tinkershell.io/docs/install.html) explains local
 and SSH connections, configuration, version pinning, download-only use and
 per-user portable installs. Scripts can be downloaded and inspected first.
@@ -30,7 +34,7 @@ per-user portable installs. Scripts can be downloaded and inspected first.
 
 See the [latest release](https://github.com/chet/tinkershell-release/releases/latest)
 for downloads, `manifest.tsv` and `SHA256SUMS`. Installers verify SHA-256 and byte
-length over HTTPS before installation. Debian packages are registered with dpkg;
+length over HTTPS before installation. Explicit Debian packages are registered with dpkg;
 there is no apt repository yet, so rerun the installer for a new version.
 
 Ordinary daemon restarts preserve tmux panes and native agent conversations.
